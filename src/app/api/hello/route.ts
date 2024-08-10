@@ -1,10 +1,16 @@
-import type { NextRequest } from 'next/server'
-import { getRequestContext } from '@cloudflare/next-on-pages'
+import type { NextRequest } from 'next/server';
+import { getRequestContext } from '@cloudflare/next-on-pages';
+import { env } from 'process';
 
-export const runtime = 'edge'
+export interface Env {
+  MY_VARIABLE: string;
+}
+
+export const runtime = 'edge';
 
 export async function GET(request: NextRequest) {
-  let responseText = 'Hello World'
+  let responseText = 'Hello World';
+  return new Response(`API host: ${env.MY_VARIABLE}`);
 
   // In the edge runtime you can use Bindings that are available in your application
   // (for more details see:
@@ -18,5 +24,5 @@ export async function GET(request: NextRequest) {
   // const suffix = await myKv.get('suffix')
   // responseText += suffix
 
-  return new Response(responseText)
+  // return new Response(responseText);
 }
