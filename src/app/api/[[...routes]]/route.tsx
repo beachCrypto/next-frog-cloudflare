@@ -9,14 +9,6 @@ import { handle } from 'frog/next';
 import { serveStatic } from 'frog/serve-static';
 
 const app = new Frog({
-  // hub: {
-  //   apiUrl: 'https://hubs.airstack.xyz',
-  //   fetchOptions: {
-  //     headers: {
-  //       'x-airstack-hubs': getRequestContext().env.AIRSTACK_API_TOKEN,
-  //     },
-  //   },
-  // },
   title: 'Ham Frames',
   assetsPath: '/',
   basePath: '/api',
