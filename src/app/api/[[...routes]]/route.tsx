@@ -1,14 +1,26 @@
 /* eslint-disable react/jsx-key */
 /** @jsxImportSource frog/jsx */
 
-import { getRequestContext } from '@cloudflare/next-on-pages';
 import { Button, Frog, TextInput } from 'frog';
 import { devtools } from 'frog/dev';
 // import { neynar } from 'frog/hubs'
 import { handle } from 'frog/next';
 import { serveStatic } from 'frog/serve-static';
+import { env } from 'process';
+
+export interface Env {
+  AIRSTACK_API_TOKEN: string;
+}
 
 const app = new Frog({
+  hub: {
+    apiUrl: 'https://hubs.airstack.xyz',
+    fetchOptions: {
+      headers: {
+        'x-airstack-hubs': env.AIRSTACK_API_TOKEN ?? '',
+      },
+    },
+  },
   title: 'Next Frog Cloudflare',
   assetsPath: '/',
   basePath: '/api',
