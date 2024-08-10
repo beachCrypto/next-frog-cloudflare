@@ -68,18 +68,25 @@ app.frame('/', (c) => {
           }}
         >
           {status === 'response'
-            ? `Nice choice.${
-                fruit ? ` ${fruit.toUpperCase()}!!` : ''
-              }`
-            : 'Welcome!'}
+            ? `${fruit ? ` ${fruit.toUpperCase()}!!` : ''}`
+            : 'Frog.fm frames hosted on Cloudflare Workers!'}
         </div>
       </div>
     ),
     intents: [
-      <TextInput placeholder="Enter custom fruit..." />,
-      <Button value="apples">Apples</Button>,
-      <Button value="oranges">Oranges</Button>,
-      <Button value="bananas">Bananas</Button>,
+      <TextInput placeholder="Send your feedback..." />,
+      <Button value="Minimal & lightweight framework for Farcaster Frames">
+        Frog Fm
+      </Button>,
+      <Button
+        value="The React Framework for the Web
+"
+      >
+        Next.js
+      </Button>,
+      <Button value="Deploy serverless code instantly across the globe to give it exceptional performance, reliability, and scale.">
+        Cloudflare Workers
+      </Button>,
       status === 'response' && <Button.Reset>Reset</Button.Reset>,
     ],
   });
