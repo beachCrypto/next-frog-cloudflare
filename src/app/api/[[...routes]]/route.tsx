@@ -9,15 +9,7 @@ import { handle } from 'frog/next';
 import { serveStatic } from 'frog/serve-static';
 
 const app = new Frog({
-  // hub: {
-  //   apiUrl: 'https://hubs.airstack.xyz',
-  //   fetchOptions: {
-  //     headers: {
-  //       'x-airstack-hubs': getRequestContext().env.AIRSTACK_API_TOKEN,
-  //     },
-  //   },
-  // },
-  title: 'Ham Frames',
+  title: 'Next Frog Cloudflare',
   assetsPath: '/',
   basePath: '/api',
   // Supply a Hub to enable frame verification.
