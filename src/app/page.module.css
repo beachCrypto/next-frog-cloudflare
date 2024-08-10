@@ -81,6 +81,11 @@
   padding: 4rem 0;
 }
 
+ .center p {
+    font-size: 2rem;
+    padding: 8rem 0 6rem;
+  }
+
 .center::before {
   background: var(--secondary-glow);
   border-radius: 50%;
